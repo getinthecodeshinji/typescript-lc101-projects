@@ -1,5 +1,5 @@
 // Add your import statement here:
-
+import { Spacelocation } from "./SpaceLocation";
 
 let kilometersToMars: number = 225000000;
 let kilometersToTheMoon: number = 384400;
@@ -21,7 +21,12 @@ class Spacecraft {
   }
 
   // Add the printDaysToLocation function here.
-
+  printsDaysToLocation(location: Spacelocation){
+    console.log(`${this.name} will make it to ${location.name} in ${this.getDaysToLocation(location.kilometersAway)} days`);
+  }
 }
 
 // Paste in the code from step 6 here:
+let biggerShip = new Spacecraft("Big Bot 452", 17500);
+let mars = new Spacelocation('Mars', kilometersToMars);
+biggerShip.printsDaysToLocation(mars);
